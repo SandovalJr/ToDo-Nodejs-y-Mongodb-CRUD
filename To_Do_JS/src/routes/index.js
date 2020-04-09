@@ -15,17 +15,17 @@ router.get("/", async (req, res) => {
   //   res.send("hola que pex");
 });
 
-
 // Done
 router.get("/turn/:id", async (req, res) => {
   const { id } = req.params;
   const task = await Task.findById(id);
+  // cambiamos el status
+  task.status = !task.status;
+  await task.save();
 
-  console.log(task);
-  res.send('recibi ')
-  
+  // console.log(task);
+  res.redirect("/");
 });
-
 
 // ruta para agregar
 router.post("/add", async (req, res) => {
@@ -37,7 +37,6 @@ router.post("/add", async (req, res) => {
   //   redireccion
   res.redirect("/");
 });
-
 
 router.get("/delete/:id", async (req, res) => {
   // console.log(req.params);
