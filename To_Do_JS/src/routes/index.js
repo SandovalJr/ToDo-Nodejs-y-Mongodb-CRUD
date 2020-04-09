@@ -3,11 +3,15 @@ const router = express.Router();
 
 const Task = require("../models/task");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   // Operacion consulta
-  
+  const tasks = await Task.find();
+  console.log(tasks);
 
-  res.render("index");
+  //   enviamos las actividades a el index
+  res.render("index", {
+    tasks,
+  });
   //   res.send("hola que pex");
 });
 
