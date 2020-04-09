@@ -38,6 +38,15 @@ router.post("/add", async (req, res) => {
   res.redirect("/");
 });
 
+// para editar
+router.get("/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const task = await Task.findById(id);
+  res.render("edit", {
+    task
+  });
+});
+
 router.get("/delete/:id", async (req, res) => {
   // console.log(req.params);
   //   obtenemos el id
