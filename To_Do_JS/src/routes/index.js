@@ -21,6 +21,9 @@ router.post("/add", async (req, res) => {
   const task = new Task(req.body);
   //   await es para decirle que hay un nuevo dato y enviar un mensaje
   await task.save();
-  res.send("recibido");
+
+  //   redireccion
+
+  res.redirect("/");
 });
 module.exports = router;
