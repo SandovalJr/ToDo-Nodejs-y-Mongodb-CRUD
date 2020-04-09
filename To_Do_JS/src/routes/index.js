@@ -23,7 +23,17 @@ router.post("/add", async (req, res) => {
   await task.save();
 
   //   redireccion
-
   res.redirect("/");
 });
+
+router.get("/delete/:id", async (req, res) => {
+  // console.log(req.params);
+  //   obtenemos el id
+  const { id } = req.params;
+  await Task.remove({ _id: id });
+
+  //   redireccion
+  res.redirect("/");
+});
+
 module.exports = router;
