@@ -2,11 +2,11 @@
 
 <div class="container">
   <!-- FORMULARIO -->
-  <div class="col-12">
+  <div class="col-5 offset-md-3">
     <div class="card">
       <div class="card-body">
-        <h1 class="text-center">To Do</h1>
-        <form action="/update/<%= task._id %>" method="POST">
+        <h1 class="text-center">To Do Editar</h1>
+        <form action="/edit/<%= task._id %>" method="POST">
           <!-- titulo -->
           <div class="form-group">
             <!-- <h2 class="text-center">To Do</h2> -->
@@ -29,7 +29,7 @@
             > <%= task.description %></textarea>
           </div>
           <button type="submit" class="btn btn-outline-info btn-block">
-            Agregar
+            Actualizar
           </button>
         </form>
       </div>

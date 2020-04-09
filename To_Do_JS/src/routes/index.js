@@ -38,7 +38,7 @@ router.post("/add", async (req, res) => {
   res.redirect("/");
 });
 
-// para editar
+// para obtener los datos de editar y enviarlo a otra vista
 router.get("/edit/:id", async (req, res) => {
   const { id } = req.params;
   const task = await Task.findById(id);
